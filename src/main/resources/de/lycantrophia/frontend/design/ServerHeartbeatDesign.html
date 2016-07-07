@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/resources&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+ </head> 
+ <body> 
+  <vaadin-vertical-split-panel style-name="large" split-position="375px"> 
+   <vaadin-vertical-layout style-name="main-panel no-bottom-padding" spacing size-full> 
+    <vaadin-horizontal-layout spacing size-full :expand> 
+     <vaadin-vertical-layout style-name="container" width="300px" height-full> 
+      <vaadin-label size-auto plain-text>
+        Statistics 
+      </vaadin-label> 
+     </vaadin-vertical-layout> 
+     <vaadin-horizontal-layout style-name="container" size-full :expand> 
+      <vaadin-label size-full plain-text>
+        Graph 
+      </vaadin-label> 
+     </vaadin-horizontal-layout> 
+    </vaadin-horizontal-layout> 
+    <vaadin-horizontal-layout style-name="container" spacing width-full height="50px"> 
+     <vaadin-button icon="fonticon://FontAwesome/f04b" style-name="tiny icon-green flat" plain-text _id="buttonStart" :middle>
+       Start 
+     </vaadin-button> 
+     <vaadin-button icon="fonticon://FontAwesome/f01e" style-name="tiny icon-yellow flat" plain-text _id="buttonRestart" :middle>
+       Restart 
+     </vaadin-button> 
+     <vaadin-button icon="fonticon://FontAwesome/f04d" style-name="tiny icon-red flat" plain-text _id="buttonStop" :middle>
+       Stop 
+     </vaadin-button> 
+     <vaadin-button icon="fonticon://FontAwesome/f00d" style-name="tiny icon-pink flat" plain-text _id="buttonKill" :middle>
+       Kill 
+     </vaadin-button> 
+     <vaadin-label size-auto :expand></vaadin-label> 
+    </vaadin-horizontal-layout> 
+   </vaadin-vertical-layout> 
+   <vaadin-horizontal-layout style-name="main-panel no-top-padding" spacing size-full> 
+    <vaadin-vertical-layout style-name="container" spacing size-full :expand> 
+     <vaadin-text-area caption="Server Log" enabled="false" size-full _id="textAreaServerLog" :expand></vaadin-text-area> 
+     <vaadin-horizontal-layout spacing width-full> 
+      <vaadin-text-field width-full _id="textFieldServerCommand" :expand></vaadin-text-field> 
+      <vaadin-button plain-text _id="buttonSendCommand">
+        Send 
+      </vaadin-button> 
+     </vaadin-horizontal-layout> 
+    </vaadin-vertical-layout> 
+    <vaadin-vertical-layout style-name="container" spacing width="300px" height-full> 
+     <vaadin-horizontal-layout spacing width-full> 
+      <vaadin-text-field caption="Commands" width-full _id="textFieldNewCommand" :bottom :expand></vaadin-text-field> 
+      <vaadin-button icon="fonticon://FontAwesome/f067" style-name="icon-only icon-green flat" plain-text _id="buttonAdd" :bottom>
+        + 
+      </vaadin-button> 
+     </vaadin-horizontal-layout> 
+     <vaadin-horizontal-layout spacing size-full :expand> 
+      <vaadin-tree item-caption-mode="id" size-full _id="treeCommandsList" :expand></vaadin-tree> 
+      <vaadin-vertical-layout spacing size-auto> 
+       <vaadin-button icon="fonticon://FontAwesome/f068" style-name="icon-only icon-red flat" plain-text _id="buttonDelete">
+         - 
+       </vaadin-button> 
+       <vaadin-button icon="fonticon://FontAwesome/f0c5" style-name="icon-only flat" plain-text _id="buttonCopy">
+         cpy 
+       </vaadin-button> 
+      </vaadin-vertical-layout> 
+     </vaadin-horizontal-layout> 
+    </vaadin-vertical-layout> 
+   </vaadin-horizontal-layout> 
+  </vaadin-vertical-split-panel>  
+ </body>
+</html>
