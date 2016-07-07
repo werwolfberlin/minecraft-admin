@@ -21,8 +21,6 @@ import java.util.LinkedHashSet;
 @Widgetset("de.lycantrophia.MyAppWidgetset")
 public class MinecraftAdminUI extends UI {
 
-    private Navigator navigator;
-
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         getPage().setTitle("Minecraft Admin");
