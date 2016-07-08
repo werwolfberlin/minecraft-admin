@@ -1,4 +1,4 @@
-package de.lycantrophia.minecraftadmin.components.serverstatebutton.client;
+package de.lycantrophia.client;
 
 import com.vaadin.shared.MouseEventDetails;
 import com.vaadin.shared.communication.ServerRpc;

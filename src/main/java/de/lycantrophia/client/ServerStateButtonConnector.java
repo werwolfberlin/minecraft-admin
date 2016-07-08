@@ -1,10 +1,14 @@
-package de.lycantrophia.minecraftadmin.components.serverstatebutton.client;
+package de.lycantrophia.client;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.vaadin.client.MouseEventDetailsBuilder;
 import com.vaadin.client.communication.RpcProxy;
 import com.vaadin.client.communication.StateChangeEvent;
 import com.vaadin.client.ui.AbstractComponentConnector;
+import com.vaadin.shared.MouseEventDetails;
 import com.vaadin.shared.ui.Connect;
-import de.lycantrophia.minecraftadmin.components.serverstatebutton.ServerStateButton;
+import de.lycantrophia.ServerStateButton;
 
 // Connector binds client-side widget class to server-side component class
 // Connector lives in the client and the @Connect annotation specifies the
@@ -19,30 +23,30 @@ public class ServerStateButtonConnector extends AbstractComponentConnector {
 	public ServerStateButtonConnector() {
 		
 		// To receive RPC events from server, we register ClientRpc implementation 
-		registerRpc(ServerStateButtonClientRpc.class, new ServerStateButtonClientRpc(){
-
+		registerRpc(ServerStateButtonClientRpc.class, new ServerStateButtonClientRpc() {
 			@Override
-			public void updateServerInfo(final String users, final String cpuLoad, final String memoryUsage) {
-				getWidget().updateServerInfo(users, cpuLoad, memoryUsage);
+			public void setServerName(String serverName) {
+				getWidget().setServerName(serverName);
 			}
 
 			@Override
-			public void setServerName(final String name) {
-				getWidget().setServerName(name);
+			public void setMaxRam(int maxRam) {
+				getWidget().setMaxRam(maxRam);
+
 			}
 		});
 
 		// We choose listed for mouse clicks for the widget
-//		getWidget().addClickHandler(new ClickHandler() {
-//			public void onClick(ClickEvent event) {
-//				final MouseEventDetails mouseDetails = MouseEventDetailsBuilder
-//						.buildMouseEventDetails(event.getNativeEvent(),
-//								getWidget().getElement());
-//
-//				// When the widget is clicked, the event is sent to server with ServerRpc
-//				rpc.clicked(mouseDetails);
-//			}
-//		});
+		getWidget().addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				final MouseEventDetails mouseDetails = MouseEventDetailsBuilder
+						.buildMouseEventDetails(event.getNativeEvent(),
+								getWidget().getElement());
+				
+				// When the widget is clicked, the event is sent to server with ServerRpc
+				rpc.clicked(mouseDetails);
+			}
+		});
 
 	}
 
@@ -55,18 +59,15 @@ public class ServerStateButtonConnector extends AbstractComponentConnector {
 
 	// We must implement getState() to cast to correct type
 	@Override
-	public ServerButtonState getState() {
-		return (ServerButtonState) super.getState();
+	public ServerStateButtonState getState() {
+		return (ServerStateButtonState) super.getState();
 	}
 
 	// Whenever the state changes in the server-side, this method is called
 	@Override
 	public void onStateChanged(StateChangeEvent stateChangeEvent) {
 		super.onStateChanged(stateChangeEvent);
-
-		// State is directly readable in the client after it is set in server
-//		final String text = getState().text;
-//		getWidget().setText(text);
+		getWidget().setStatistics(getState().getUserCount(), getState().getCpuLoad(), getState().getRamUsage());
 	}
 
 }
