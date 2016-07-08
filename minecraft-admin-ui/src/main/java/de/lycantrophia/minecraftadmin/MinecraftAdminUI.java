@@ -18,7 +18,7 @@ import java.util.LinkedHashSet;
  *
  */
 @Theme("mytheme")
-@Widgetset("de.lycantrophia.MyAppWidgetset")
+@Widgetset("de.lycantrophia.minecraftadmin.MinecraftAdminWidgetset")
 public class MinecraftAdminUI extends UI {
 
     @Override

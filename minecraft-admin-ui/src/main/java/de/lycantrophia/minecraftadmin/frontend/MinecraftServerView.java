@@ -7,16 +7,13 @@ import com.vaadin.ui.TabSheet;
 import de.lycantrophia.minecraftadmin.frontend.design.ServerHeartbeatDesign;
 import de.lycantrophia.minecraftadmin.mediation.MinecraftServer;
 
-/**
- * Created by Werwolf on 04.07.2016.
- */
-public class MinecraftServerView extends TabSheet implements View {
+class MinecraftServerView extends TabSheet implements View {
 
     private MinecraftServer minecraftServer;
 
-    public MinecraftServerView(MinecraftServer minecraftServer) {
+    MinecraftServerView(MinecraftServer minecraftServer) {
         this.minecraftServer = minecraftServer;
-        addTab(new ServerHeartbeatDesign(), "Heartbeat");
+        addTab(new ServerHeartbeat(), "Heartbeat");
         addTab(new Panel(), "Map");
         addTab(new Panel(), "Server");
         addTab(new Panel(), "Plugins");
