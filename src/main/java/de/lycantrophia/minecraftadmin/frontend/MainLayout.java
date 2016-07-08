@@ -2,7 +2,7 @@ package de.lycantrophia.minecraftadmin.frontend;
 
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.UI;
-import de.lycantrophia.minecraftadmin.components.serverstatebutton.ServerStateButton;
+import de.lycantrophia.ServerStateButton;
 import de.lycantrophia.minecraftadmin.frontend.design.MainLayoutDesign;
 import de.lycantrophia.minecraftadmin.mediation.MinecraftServer;
 
@@ -22,8 +22,10 @@ public class MainLayout extends MainLayoutDesign {
         final String name = minecraftServer.getName();
         final ServerStateButton navButton = new ServerStateButton();
         navButton.setServerName(name);
-        navButton.updateServerInfo("0", "35%", "3659 MB");
-        navButton.setWidth(100, Unit.PERCENTAGE);
+        navButton.setMaxRam(4096);
+        navButton.updateServerInfo("2", 0.62, 3659);
+        navButton.setWidth(140, Unit.PIXELS);
+        navButton.setHeight(140, Unit.PIXELS);
         navButton.addClickListener(event -> navigator.navigateTo(name));
         navigationLayout.addComponent(navButton);
         navigator.addView(name, new MinecraftServerView(minecraftServer));
