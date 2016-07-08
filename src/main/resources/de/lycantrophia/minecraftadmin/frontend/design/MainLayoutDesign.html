@@ -6,11 +6,13 @@
  </head> 
  <body> 
   <vaadin-horizontal-layout spacing size-full> 
-   <vaadin-vertical-layout style-name="container" spacing width="150px" height-full> 
+   <vaadin-vertical-layout style-name="container" spacing width-auto height-full> 
     <vaadin-label size-auto :center>
       Servers 
     </vaadin-label> 
-    <vaadin-vertical-layout spacing width="150px" height-full _id="navigationLayout" :expand></vaadin-vertical-layout> 
+    <vaadin-panel style-name="borderless" size-full :expand> 
+     <vaadin-vertical-layout spacing _id="navigationLayout"></vaadin-vertical-layout> 
+    </vaadin-panel> 
     <vaadin-horizontal-layout width-full> 
      <vaadin-button plain-text :middle :center>
        Add Server 
