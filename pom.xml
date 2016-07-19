@@ -125,6 +125,6 @@
     <module>minecraft-admin-widgetset</module>
     <module>minecraft-admin-ui</module>
     <module>minecraft-admin-production</module>
-	<module>../server-state-button</module><!--/server-state-button-addon</module>-->
+	<module>../server-state-button</module>
   </modules>
 </project>

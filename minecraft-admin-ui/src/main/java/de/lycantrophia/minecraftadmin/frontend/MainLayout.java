@@ -8,6 +8,7 @@ import de.lycantrophia.minecraftadmin.mediation.MinecraftServer;
 
 public class MainLayout extends MainLayoutDesign {
 
+    public static final int BUTTON_SIZE = 135;
     private final Navigator navigator;
     private static final int MAX_RAM = 4096;
 
@@ -18,15 +19,16 @@ public class MainLayout extends MainLayoutDesign {
 
     public void addMinecraftServer(MinecraftServer minecraftServer) {
         final String name = minecraftServer.getName();
-        final ServerStateButton navButton = new ServerStateButton();
-        navButton.addStyleName("v-button/");
-        navButton.addStyleName("flat");
+        final ServerStateButton navButton = new ServerStateButton(name.length() > 4);
         navButton.setServerName(name);
         navButton.setMaxRam(MAX_RAM);
         navButton.updateServerInfo("" + (int)(Math.random() * 20), Math.random(), (int)(Math.random() * MAX_RAM));
-        navButton.setWidth(150, Unit.PIXELS);
-        navButton.setHeight(150, Unit.PIXELS);
+        navButton.setWidth(BUTTON_SIZE, Unit.PIXELS);
+        navButton.setHeight(BUTTON_SIZE, Unit.PIXELS);
         navButton.addClickListener(event -> navigator.navigateTo(name));
+        navButton.addStyleName("v-button");
+        navButton.addStyleName("flat");
+        navButton.addStyleName("server-button-adaption");
         navigationLayout.addComponent(navButton);
         navigator.addView(name, new MinecraftServerView(minecraftServer));
     }

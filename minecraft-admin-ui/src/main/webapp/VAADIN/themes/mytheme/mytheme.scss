@@ -86,58 +86,42 @@ $v-app-background-color: $v-background-color;
     box-shadow: 0 0 0 2px rgba(255, 0, 119, 0.5);
   }
   
+  .server-button-adaption {
+    padding: 0;
+    font-weight: 100;
+  }
+
+  .server-button-adaption:before {
+    content: normal;
+  }
+
   .flat {
     border-radius: 0;
     border: 2px solid #222222;
     background: transparent none;
     box-shadow:none;
   }
+
   .flat:hover {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
-  .server-state-button {
-    background-color: white;
-  }
-  .server-state-button {
-    background-color: rgba(0, 0, 0, 0.05);
-    border:1px solid darkgray;
-    margin: 0;
+  .v-tabsheet-tabitemcell-name-tab-style
+  {
+    width:100px;
+    padding-left: 10px;
   }
 
-  .server-state-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  .v-tabsheet-tabitemcell-name-tab-style .v-captiontext
+  {
+    color: #dc1818;
+    //text-shadow: 0 0 1px #dc1818;
+    font-weight: 900;
+    font-size: 125%;
   }
 
-  .server-state-button:active {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .server-state-server-name {
-    background-color: rgba(0, 0, 0, 0.05);
-    font-weight: bold;
-    font-size: 90%;
-  }
-
-  .server-state-caption {
-    font-size: 80%;
-    padding-left:5px;
-  }
-
-  .server-state-bar {
-    height: 5px;
-    font-size: 80%;
-  }
-
-  .server-state-users {
-    font-size: 250%;
-  }
-
-  .server-state-cpu {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
-  .server-state-ram {
-    background-color: rgba(0, 0, 0, 0.05);
+  .v-tabsheet-tabitemcell-name-tab-style .v-caption.v-disabled
+  {
+    opacity: 1;
   }
 }

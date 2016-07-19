@@ -2,6 +2,7 @@ package de.lycantrophia.minecraftadmin.frontend;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
+import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
 import de.lycantrophia.minecraftadmin.frontend.design.ServerHeartbeatDesign;
@@ -13,11 +14,21 @@ class MinecraftServerView extends TabSheet implements View {
 
     MinecraftServerView(MinecraftServer minecraftServer) {
         this.minecraftServer = minecraftServer;
+        addTab(new CssLayout(), minecraftServer.getName());
+
         addTab(new ServerHeartbeat(), "Heartbeat");
         addTab(new Panel(), "Map");
         addTab(new Panel(), "Server");
         addTab(new Panel(), "Plugins");
         addTab(new Panel(), "Worlds");
+
+        Tab nameTab = getTab(0);
+        nameTab.setEnabled(false);
+        nameTab.getComponent().setWidth(100, Unit.PIXELS);
+        nameTab.setStyleName("name-tab-style");
+        nameTab.getComponent().addStyleName("name-tab-style");
+
+
         setSizeFull();
     }
 

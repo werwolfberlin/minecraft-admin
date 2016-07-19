@@ -12980,6 +12980,15 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 0 0 2px rgba(255, 0, 119, 0.5);
 }
 
+.mytheme .server-button-adaption {
+	padding: 0;
+	font-weight: 100;
+}
+
+.mytheme .server-button-adaption:before {
+	content: normal;
+}
+
 .mytheme .flat {
 	border-radius: 0;
 	border: 2px solid #222222;
@@ -12991,48 +13000,17 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-.mytheme .server-state-button {
-	background-color: white;
+.mytheme .v-tabsheet-tabitemcell-name-tab-style {
+	width: 100px;
+	padding-left: 10px;
 }
 
-.mytheme .server-state-button {
-	background-color: rgba(0, 0, 0, 0.05);
-	border: 1px solid darkgray;
-	margin: 0;
+.mytheme .v-tabsheet-tabitemcell-name-tab-style .v-captiontext {
+	color: #dc1818;
+	font-weight: 900;
+	font-size: 125%;
 }
 
-.mytheme .server-state-button:hover {
-	background-color: rgba(255, 255, 255, 0.1);
-}
-
-.mytheme .server-state-button:active {
-	background-color: rgba(0, 0, 0, 0.3);
-}
-
-.mytheme .server-state-server-name {
-	background-color: rgba(0, 0, 0, 0.05);
-	font-weight: bold;
-	font-size: 90%;
-}
-
-.mytheme .server-state-caption {
-	font-size: 80%;
-	padding-left: 5px;
-}
-
-.mytheme .server-state-bar {
-	height: 5px;
-	font-size: 80%;
-}
-
-.mytheme .server-state-users {
-	font-size: 250%;
-}
-
-.mytheme .server-state-cpu {
-	background-color: rgba(0, 0, 0, 0.05);
-}
-
-.mytheme .server-state-ram {
-	background-color: rgba(0, 0, 0, 0.05);
+.mytheme .v-tabsheet-tabitemcell-name-tab-style .v-caption.v-disabled {
+	opacity: 1;
 }

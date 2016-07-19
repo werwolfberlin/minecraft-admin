@@ -29,7 +29,9 @@ public class MinecraftAdminUI extends UI {
         //load running servers from backend and create a view for each.
         final Collection<MinecraftServer> minecraftServers = new LinkedHashSet<>();
         minecraftServers.add(new MinecraftServer("Hugo"));
+        minecraftServers.add(new MinecraftServer("Torsten"));
         minecraftServers.add(new MinecraftServer("Jens"));
+        minecraftServers.add(new MinecraftServer("Waldi"));
 
         String defaultView = "";
         for (MinecraftServer minecraftServer : minecraftServers) {
