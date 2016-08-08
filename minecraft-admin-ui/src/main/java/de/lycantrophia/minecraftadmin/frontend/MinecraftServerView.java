@@ -5,7 +5,6 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
-import de.lycantrophia.minecraftadmin.frontend.design.ServerHeartbeatDesign;
 import de.lycantrophia.minecraftadmin.mediation.MinecraftServer;
 
 class MinecraftServerView extends TabSheet implements View {
@@ -16,7 +15,8 @@ class MinecraftServerView extends TabSheet implements View {
         this.minecraftServer = minecraftServer;
         addTab(new CssLayout(), minecraftServer.getName());
 
-        addTab(new ServerHeartbeat(), "Heartbeat");
+        final ServerHeartbeat heartbeat = new ServerHeartbeat();
+        addTab(heartbeat, "Heartbeat");
         addTab(new Panel(), "Map");
         addTab(new Panel(), "Server");
         addTab(new Panel(), "Plugins");

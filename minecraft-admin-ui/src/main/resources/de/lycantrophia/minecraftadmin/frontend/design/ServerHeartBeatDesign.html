@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
  <head>
-  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/resources&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
  </head> 
  <body> 
   <vaadin-vertical-split-panel style-name="large" split-position="375px"> 
@@ -12,11 +12,7 @@
         Statistics 
       </vaadin-label> 
      </vaadin-vertical-layout> 
-     <vaadin-horizontal-layout style-name="container" size-full :expand> 
-      <vaadin-label size-full plain-text>
-        Graph 
-      </vaadin-label> 
-     </vaadin-horizontal-layout> 
+     <vaadin-css-layout style-name="container" size-full _id="layoutGraph" :expand></vaadin-css-layout> 
     </vaadin-horizontal-layout> 
     <vaadin-horizontal-layout style-name="container" spacing width-full height="50px"> 
      <vaadin-button icon="fonticon://FontAwesome/f04b" style-name="tiny icon-green flat" plain-text _id="buttonStart" :middle>

@@ -8,9 +8,10 @@ import de.lycantrophia.minecraftadmin.mediation.MinecraftServer;
 
 public class MainLayout extends MainLayoutDesign {
 
-    public static final int BUTTON_SIZE = 135;
-    private final Navigator navigator;
+    private static final int BUTTON_SIZE = 135;
     private static final int MAX_RAM = 4096;
+
+    private final Navigator navigator;
 
     public MainLayout(final UI ui) {
 
